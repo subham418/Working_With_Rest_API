@@ -8,34 +8,34 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootBackendApplication implements CommandLineRunner {
+public class SpringbokBackendApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(SpringbootBackendApplication.class, args);
+		SpringApplication.run(SpringbokBackendApplication.class, args);
 	}
 
 	@Autowired
 	private ApiRepository apiRepository;
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		Employee employee=new Employee();
-		employee.setFname("Subham");
-		employee.setLname("Sah");
-		employee.setEmailid("sk.gmail");
+		employee.setFirst_name("Abc");
+		employee.setLast_name("Sah");
+		employee.setEmail_id("sk.gmail");
 		apiRepository.save(employee);
 
 		Employee employee1=new Employee();
-		employee1.setFname("Shivam");
-		employee1.setLname("Mishra");
-		employee1.setEmailid("sm@gmail.com");
+		employee1.setFirst_name("BCD");
+		employee1.setLast_name("Mishra");
+		employee1.setEmail_id("sm@gmail.com");
 		apiRepository.save(employee1);
 
 		Employee employee2=new Employee();
-		employee2.setFname("Shalu");
-		employee2.setLname("Mishra");
-		employee2.setEmailid("sg@gmail.com");
+		employee2.setFirst_name("GEF");
+		employee2.setLast_name("Mishra");
+		employee2.setEmail_id("sg@gmail.com");
 		apiRepository.save(employee2);
 	}
 }

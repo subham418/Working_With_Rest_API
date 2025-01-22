@@ -38,9 +38,9 @@ public class EmployeeController {
     public ResponseEntity<Employee> updateEmployee( @PathVariable long id, @RequestBody Employee employeeDetails){
         Employee employee=apiRepository.findById(id).
                 orElseThrow(()-> new ResourceNotFoundException("Employee not exists with id:"+id));
-        employee.setFname(employeeDetails.getFname());
-        employee.setLname(employeeDetails.getLname());
-        employee.setEmailid(employeeDetails.getEmailid());
+        employee.setFirst_name(employeeDetails.getFirst_name());
+        employee.setLast_name(employeeDetails.getLast_name());
+        employee.setEmail_id(employeeDetails.getEmail_id());
 
         apiRepository.save(employee);
 
@@ -52,9 +52,9 @@ public class EmployeeController {
         Employee newEmployee=apiRepository
                 .findById(id)
                 .orElseThrow(()->new ResourceNotFoundException("Employee not Exists with id: "+id));
-        if(employee.getFname()!=null) newEmployee.setFname(employee.getFname());
-        if(employee.getLname()!=null) newEmployee.setLname(employee.getLname());
-        if(employee.getEmailid()!=null) newEmployee.setEmailid(employee.getEmailid());
+        if(employee.getFirst_name()!=null) newEmployee.setFirst_name(employee.getFirst_name());
+        if(employee.getLast_name()!=null) newEmployee.setLast_name(employee.getLast_name());
+        if(employee.getEmail_id()!=null) newEmployee.setEmail_id(employee.getEmail_id());
 
         apiRepository.save(newEmployee);
         return ResponseEntity.ok(newEmployee);
